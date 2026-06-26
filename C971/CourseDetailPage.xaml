@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:C971.Models"
+             x:Class="C971.CourseDetailPage"
+             Title="Course Details">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Tab buttons -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,*" ColumnSpacing="0">
+            <Button x:Name="DetailsTabBtn"
+                    Text="Details"
+                    Clicked="OnDetailsTabClicked"
+                    Grid.Column="0"
+                    CornerRadius="0" />
+            <Button x:Name="AssessmentsTabBtn"
+                    Text="Assessments"
+                    Clicked="OnAssessmentsTabClicked"
+                    Grid.Column="1"
+                    CornerRadius="0" />
+        </Grid>
+
+        <!-- Course Details tab -->
+        <ScrollView Grid.Row="1" x:Name="DetailsView">
+            <VerticalStackLayout Padding="16" Spacing="10">
+
+                <Label Text="Course Title" FontAttributes="Bold" />
+                <Entry x:Name="TitleEntry" Placeholder="Course title" />
+
+                <Label Text="Start Date" FontAttributes="Bold" />
+                <DatePicker x:Name="StartDatePicker" />
+
+                <Label Text="Anticipated End Date" FontAttributes="Bold" />
+                <DatePicker x:Name="EndDatePicker" />
+
+                <Label Text="Status" FontAttributes="Bold" />
+                <Picker x:Name="StatusPicker" />
+
+                <BoxView HeightRequest="1" Color="LightGray" Margin="0,8" />
+
+                <Label Text="Instructor Information" FontAttributes="Bold" FontSize="16" />
+
+                <Label Text="Name" FontAttributes="Bold" />
+                <Entry x:Name="InstructorNameEntry" Placeholder="Instructor full name" />
+
+                <Label Text="Phone Number" FontAttributes="Bold" />
+                <Entry x:Name="InstructorPhoneEntry"
+                       Placeholder="e.g. 555-123-4567"
+                       Keyboard="Telephone" />
+
+                <Label Text="Email Address" FontAttributes="Bold" />
+                <Entry x:Name="InstructorEmailEntry"
+                       Placeholder="instructor@example.edu"
+                       Keyboard="Email" />
+
+                <BoxView HeightRequest="1" Color="LightGray" Margin="0,8" />
+
+                <Label Text="Notes" FontAttributes="Bold" />
+                <Editor x:Name="NotesEditor"
+                        Placeholder="Optional course notes..."
+                        HeightRequest="120"
+                        AutoSize="TextChanges" />
+
+                <Button Text="Share Notes"
+                        Clicked="OnShareNotesClicked" />
+
+                <BoxView HeightRequest="1" Color="LightGray" Margin="0,8" />
+
+                <Label Text="Date Alerts" FontAttributes="Bold" FontSize="16" />
+                <Grid ColumnDefinitions="*,Auto" Padding="4,0">
+                    <Label Text="Alert on Start Date" VerticalOptions="Center" />
+                    <Switch x:Name="StartAlertSwitch"
+                            Toggled="OnStartAlertToggled"
+                            Grid.Column="1" />
+                </Grid>
+                <Grid ColumnDefinitions="*,Auto" Padding="4,0">
+                    <Label Text="Alert on End Date" VerticalOptions="Center" />
+                    <Switch x:Name="EndAlertSwitch"
+                            Toggled="OnEndAlertToggled"
+                            Grid.Column="1" />
+                </Grid>
+
+                <BoxView HeightRequest="1" Color="LightGray" Margin="0,8" />
+
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                    <Button Text="Save Course"
+                            Clicked="OnSaveCourseClicked"
+                            Grid.Column="0" />
+                    <Button Text="Delete Course"
+                            Clicked="OnDeleteClicked"
+                            Grid.Column="1"
+                            BackgroundColor="DarkRed" />
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Assessments tab -->
+        <ScrollView Grid.Row="1" x:Name="AssessmentsView" IsVisible="False">
+            <VerticalStackLayout Padding="16" Spacing="10">
+
+                <Label Text="Assessments" FontAttributes="Bold" FontSize="20" />
+                <Label Text="Each course requires one Objective and one Performance assessment."
+                       FontSize="13"
+                       TextColor="Gray" />
+
+                <Button x:Name="AddAssessmentButton"
+                        Text="Add Assessment"
+                        Clicked="OnAddAssessmentClicked" />
+
+                <CollectionView x:Name="AssessmentsList">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Assessment">
+                            <Border Margin="0,4"
+                                    Padding="14"
+                                    StrokeShape="RoundRectangle 6">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnAssessmentTapped" />
+                                </Border.GestureRecognizers>
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <VerticalStackLayout Spacing="2">
+                                        <Label Text="{Binding Name}"
+                                               FontAttributes="Bold"
+                                               FontSize="16" />
+                                        <Label Text="{Binding Type}"
+                                               FontSize="13"
+                                               TextColor="Gray" />
+                                        <Label Text="{Binding StartDate, StringFormat='Start: {0:MM/dd/yyyy}'}"
+                                               FontSize="13" />
+                                        <Label Text="{Binding DueDate, StringFormat='Due: {0:MM/dd/yyyy}'}"
+                                               FontSize="13" />
+                                    </VerticalStackLayout>
+                                    <Label Text="›"
+                                           FontSize="24"
+                                           VerticalOptions="Center"
+                                           Grid.Column="1"
+                                           TextColor="Gray" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:C971.Models"
+             x:Class="C971.TermDetailPage"
+             Title="Term Details">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Tab buttons -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,*" ColumnSpacing="0">
+            <Button x:Name="DetailsTabBtn"
+                    Text="Details"
+                    Clicked="OnDetailsTabClicked"
+                    Grid.Column="0"
+                    CornerRadius="0" />
+            <Button x:Name="CoursesTabBtn"
+                    Text="Courses"
+                    Clicked="OnCoursesTabClicked"
+                    Grid.Column="1"
+                    CornerRadius="0" />
+        </Grid>
+
+        <!-- Details tab -->
+        <ScrollView Grid.Row="1" x:Name="DetailsView">
+            <VerticalStackLayout Padding="16" Spacing="10">
+
+                <Label Text="Term Title" FontAttributes="Bold" />
+                <Entry x:Name="TitleEntry" Placeholder="e.g. Term 1, Spring Term" />
+
+                <Label Text="Start Date" FontAttributes="Bold" />
+                <DatePicker x:Name="StartDatePicker" />
+
+                <Label Text="End Date" FontAttributes="Bold" />
+                <DatePicker x:Name="EndDatePicker" />
+
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="8" Margin="0,8,0,0">
+                    <Button Text="Save Term"
+                            Clicked="OnSaveTermClicked"
+                            Grid.Column="0" />
+                    <Button Text="Delete Term"
+                            Clicked="OnDeleteClicked"
+                            Grid.Column="1"
+                            BackgroundColor="DarkRed" />
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Courses tab -->
+        <ScrollView Grid.Row="1" x:Name="CoursesView" IsVisible="False">
+            <VerticalStackLayout Padding="16" Spacing="10">
+
+                <Label x:Name="CourseLimitLabel"
+                       Text="Maximum of 6 courses reached."
+                       TextColor="DarkRed"
+                       IsVisible="False" />
+
+                <Button x:Name="AddCourseButton"
+                        Text="Add Course"
+                        Clicked="OnAddCourseClicked" />
+
+                <CollectionView x:Name="CoursesList">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Course">
+                            <Border Margin="0,4"
+                                    Padding="14"
+                                    StrokeShape="RoundRectangle 6">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnCourseTapped" />
+                                </Border.GestureRecognizers>
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <VerticalStackLayout Spacing="2">
+                                        <Label Text="{Binding Title}"
+                                               FontAttributes="Bold"
+                                               FontSize="16" />
+                                        <Label Text="{Binding Status}"
+                                               FontSize="13"
+                                               TextColor="Gray" />
+                                        <Label Text="{Binding StartDate, StringFormat='Start: {0:MM/dd/yyyy}'}"
+                                               FontSize="13" />
+                                        <Label Text="{Binding EndDate, StringFormat='End: {0:MM/dd/yyyy}'}"
+                                               FontSize="13" />
+                                    </VerticalStackLayout>
+                                    <Label Text="›"
+                                           FontSize="24"
+                                           VerticalOptions="Center"
+                                           Grid.Column="1"
+                                           TextColor="Gray" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

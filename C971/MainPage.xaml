@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:C971.Models"
+             x:Class="C971.MainPage"
+             Title="Academic Terms">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Term" Clicked="OnAddTermClicked" />
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+        <Label x:Name="EmptyLabel"
+               Text="No terms yet. Tap 'Add Term' to get started."
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsVisible="False"
+               FontSize="16"
+               TextColor="Gray" />
+
+        <CollectionView x:Name="TermsList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Term">
+                    <Border Margin="12,6"
+                            Padding="16"
+                            StrokeShape="RoundRectangle 8">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTermTapped" />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout Spacing="4">
+                            <Label Text="{Binding Title}"
+                                   FontAttributes="Bold"
+                                   FontSize="18" />
+                            <Label Text="{Binding StartDate, StringFormat='Start: {0:MM/dd/yyyy}'}"
+                                   FontSize="14" />
+                            <Label Text="{Binding EndDate, StringFormat='End: {0:MM/dd/yyyy}'}"
+                                   FontSize="14" />
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>

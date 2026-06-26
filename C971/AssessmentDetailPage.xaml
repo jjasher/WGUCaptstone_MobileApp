@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.AssessmentDetailPage"
+             Title="Assessment Details">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="10">
+
+            <Label Text="Assessment Name" FontAttributes="Bold" />
+            <Entry x:Name="NameEntry" Placeholder="Assessment name" />
+
+            <Label Text="Type" FontAttributes="Bold" />
+            <Picker x:Name="TypePicker" />
+
+            <Label Text="Start Date" FontAttributes="Bold" />
+            <DatePicker x:Name="StartDatePicker" />
+
+            <Label Text="Due Date" FontAttributes="Bold" />
+            <DatePicker x:Name="DueDatePicker" />
+
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,8" />
+
+            <!-- Notifications -->
+            <Label Text="Date Alerts" FontAttributes="Bold" FontSize="16" />
+            <Grid ColumnDefinitions="*,Auto" Padding="4,0">
+                <Label Text="Alert on Start Date" VerticalOptions="Center" />
+                <Switch x:Name="StartAlertSwitch"
+                        Toggled="OnStartAlertToggled"
+                        Grid.Column="1" />
+            </Grid>
+            <Grid ColumnDefinitions="*,Auto" Padding="4,0">
+                <Label Text="Alert on Due Date" VerticalOptions="Center" />
+                <Switch x:Name="DueAlertSwitch"
+                        Toggled="OnDueAlertToggled"
+                        Grid.Column="1" />
+            </Grid>
+
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,8" />
+
+            <!-- Save / Delete -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                <Button Text="Save Assessment"
+                        Clicked="OnSaveAssessmentClicked"
+                        Grid.Column="0" />
+                <Button Text="Delete Assessment"
+                        Clicked="OnDeleteClicked"
+                        Grid.Column="1"
+                        BackgroundColor="DarkRed" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
