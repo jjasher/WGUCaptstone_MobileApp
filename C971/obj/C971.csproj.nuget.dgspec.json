@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\josha\\Source\\Repos\\d424-software-engineering-capstone\\MobileApp\\C971\\C971.csproj": {}
+    "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\C971.csproj": {}
   },
   "projects": {
-    "C:\\Users\\josha\\Source\\Repos\\d424-software-engineering-capstone\\MobileApp\\C971\\C971.csproj": {
+    "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\C971.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\josha\\Source\\Repos\\d424-software-engineering-capstone\\MobileApp\\C971\\C971.csproj",
+        "projectUniqueName": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\C971.csproj",
         "projectName": "C971",
-        "projectPath": "C:\\Users\\josha\\Source\\Repos\\d424-software-engineering-capstone\\MobileApp\\C971\\C971.csproj",
+        "projectPath": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\C971.csproj",
         "packagesPath": "C:\\Users\\josha\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\josha\\Source\\Repos\\d424-software-engineering-capstone\\MobileApp\\C971\\obj\\",
         "projectStyle": "PackageReference",
