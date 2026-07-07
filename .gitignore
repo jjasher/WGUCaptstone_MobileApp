@@ -1,0 +1,15 @@
+# Visual Studio local files
+.vs/
+*.user
+
+# Build output
+bin/
+obj/
+
+# NuGet
+*.nupkg
+.nuget/
+
+# OS
+Thumbs.db
+.DS_Store

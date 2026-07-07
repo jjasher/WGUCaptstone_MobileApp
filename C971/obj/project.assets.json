@@ -30749,11 +30749,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\josha\\source\\repos\\C971\\C971\\C971.csproj",
+      "projectUniqueName": "C:\\Users\\josha\\Source\\Repos\\d424-software-engineering-capstone\\MobileApp\\C971\\C971.csproj",
       "projectName": "C971",
-      "projectPath": "C:\\Users\\josha\\source\\repos\\C971\\C971\\C971.csproj",
+      "projectPath": "C:\\Users\\josha\\Source\\Repos\\d424-software-engineering-capstone\\MobileApp\\C971\\C971.csproj",
       "packagesPath": "C:\\Users\\josha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\josha\\source\\repos\\C971\\C971\\obj\\",
+      "outputPath": "C:\\Users\\josha\\Source\\Repos\\d424-software-engineering-capstone\\MobileApp\\C971\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

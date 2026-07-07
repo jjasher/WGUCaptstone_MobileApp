@@ -1,7 +1,32 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\josha\\OneDrive\\Desktop\\C971\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{16E1B3FD-67AC-41E7-993F-2594CF8E6B0D}|C971\\C971.csproj|c:\\users\\josha\\source\\repos\\d424-software-engineering-capstone\\mobileapp\\c971\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{16E1B3FD-67AC-41E7-993F-2594CF8E6B0D}|C971\\C971.csproj|solutionrelative:c971\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16E1B3FD-67AC-41E7-993F-2594CF8E6B0D}|C971\\C971.csproj|c:\\users\\josha\\source\\repos\\d424-software-engineering-capstone\\mobileapp\\c971\\assessmentdetailpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16E1B3FD-67AC-41E7-993F-2594CF8E6B0D}|C971\\C971.csproj|solutionrelative:c971\\assessmentdetailpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16E1B3FD-67AC-41E7-993F-2594CF8E6B0D}|C971\\C971.csproj|c:\\users\\josha\\source\\repos\\d424-software-engineering-capstone\\mobileapp\\c971\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16E1B3FD-67AC-41E7-993F-2594CF8E6B0D}|C971\\C971.csproj|solutionrelative:c971\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16E1B3FD-67AC-41E7-993F-2594CF8E6B0D}|C971\\C971.csproj|c:\\users\\josha\\source\\repos\\d424-software-engineering-capstone\\mobileapp\\c971\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{16E1B3FD-67AC-41E7-993F-2594CF8E6B0D}|C971\\C971.csproj|solutionrelative:c971\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16E1B3FD-67AC-41E7-993F-2594CF8E6B0D}|C971\\C971.csproj|c:\\users\\josha\\source\\repos\\d424-software-engineering-capstone\\mobileapp\\c971\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{16E1B3FD-67AC-41E7-993F-2594CF8E6B0D}|C971\\C971.csproj|solutionrelative:c971\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16E1B3FD-67AC-41E7-993F-2594CF8E6B0D}|C971\\C971.csproj|c:\\users\\josha\\source\\repos\\d424-software-engineering-capstone\\mobileapp\\c971\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16E1B3FD-67AC-41E7-993F-2594CF8E6B0D}|C971\\C971.csproj|solutionrelative:c971\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +34,80 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\MainPage.xaml",
+              "RelativeDocumentMoniker": "C971\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\MainPage.xaml",
+              "RelativeToolTip": "C971\\MainPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-26T19:54:48.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AssessmentDetailPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\AssessmentDetailPage.xaml.cs",
+              "RelativeDocumentMoniker": "C971\\AssessmentDetailPage.xaml.cs",
+              "ToolTip": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\AssessmentDetailPage.xaml.cs",
+              "RelativeToolTip": "C971\\AssessmentDetailPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T19:47:33.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppShell.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\AppShell.xaml.cs",
+              "RelativeDocumentMoniker": "C971\\AppShell.xaml.cs",
+              "ToolTip": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\AppShell.xaml.cs",
+              "RelativeToolTip": "C971\\AppShell.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T19:45:22.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\AppShell.xaml",
+              "RelativeDocumentMoniker": "C971\\AppShell.xaml",
+              "ToolTip": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\AppShell.xaml",
+              "RelativeToolTip": "C971\\AppShell.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-26T19:45:16.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\App.xaml",
+              "RelativeDocumentMoniker": "C971\\App.xaml",
+              "ToolTip": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\App.xaml",
+              "RelativeToolTip": "C971\\App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-26T19:45:02.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\App.xaml.cs",
+              "RelativeDocumentMoniker": "C971\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\josha\\source\\repos\\d424-software-engineering-capstone\\MobileApp\\C971\\App.xaml.cs",
+              "RelativeToolTip": "C971\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T19:44:58.183Z"
             }
           ]
         }

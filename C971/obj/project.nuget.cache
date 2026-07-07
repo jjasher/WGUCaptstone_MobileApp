@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7hcjRPOGrxQ=",
+  "dgSpecHash": "acPtHrhwOBg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\josha\\source\\repos\\C971\\C971\\C971.csproj",
+  "projectFilePath": "C:\\Users\\josha\\Source\\Repos\\d424-software-engineering-capstone\\MobileApp\\C971\\C971.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\josha\\.nuget\\packages\\googlegson\\2.13.0.1\\googlegson.2.13.0.1.nupkg.sha512",
     "C:\\Users\\josha\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.8\\microsoft.extensions.configuration.9.0.8.nupkg.sha512",
