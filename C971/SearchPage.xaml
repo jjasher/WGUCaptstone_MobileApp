@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:C971.Models"
+             x:Class="C971.SearchPage"
+             Title="Search Courses">
+
+    <VerticalStackLayout Padding="16" Spacing="12">
+
+        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+            <Entry x:Name="SearchEntry"
+                   Grid.Column="0"
+                   Placeholder="Search by title, instructor, status, or notes"
+                   ReturnCommand="{Binding Source={x:Reference SearchButton}, Path=Command}"
+                   ReturnType="Search" />
+            <Button x:Name="SearchButton"
+                    Grid.Column="1"
+                    Text="Search"
+                    Clicked="OnSearchClicked" />
+        </Grid>
+
+        <Label x:Name="ResultCountLabel"
+               IsVisible="False"
+               FontSize="13"
+               TextColor="Gray" />
+
+        <Label x:Name="NoResultsLabel"
+               Text="No courses matched your search."
+               IsVisible="False"
+               HorizontalOptions="Center"
+               TextColor="Gray"
+               FontSize="15"
+               Margin="0,24,0,0" />
+
+        <CollectionView x:Name="ResultsList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Course">
+                    <Border Margin="0,4"
+                            Padding="14"
+                            StrokeShape="RoundRectangle 8">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCourseTapped" />
+                        </Border.GestureRecognizers>
+                        <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto" RowSpacing="3">
+                            <Label Grid.Row="0" Grid.Column="0"
+                                   Text="{Binding Title}"
+                                   FontAttributes="Bold"
+                                   FontSize="16" />
+                            <Label Grid.Row="0" Grid.Column="1"
+                                   Text="{Binding Status}"
+                                   FontSize="13"
+                                   TextColor="Gray"
+                                   HorizontalOptions="End" />
+                            <Label Grid.Row="1" Grid.ColumnSpan="2"
+                                   Text="{Binding InstructorName, StringFormat='Instructor: {0}'}"
+                                   FontSize="13" />
+                            <Label Grid.Row="2" Grid.Column="0"
+                                   Text="{Binding StartDate, StringFormat='Start: {0:MM/dd/yyyy}'}"
+                                   FontSize="13" />
+                            <Label Grid.Row="2" Grid.Column="1"
+                                   Text="{Binding EndDate, StringFormat='End: {0:MM/dd/yyyy}'}"
+                                   FontSize="13"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+
+</ContentPage>

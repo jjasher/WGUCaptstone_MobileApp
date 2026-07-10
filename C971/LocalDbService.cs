@@ -50,14 +50,14 @@ namespace C971
                 InstructorName = "Anika Patel",
                 InstructorPhone = "555-123-4567",
                 InstructorEmail = "anika.patel@strimeuniversity.edu",
-                Notes = "C971 course notes."
+                Notes = "Sample course notes."
             };
             await _connection.InsertAsync(course);
 
             await _connection.InsertAsync(new Models.Assessment
             {
                 CourseId = course.Id,
-                Name = "C971 Objective Assessment",
+                Name = "Mobile Dev Objective Assessment",
                 Type = "Objective",
                 StartDate = new DateTime(2025, 3, 15),
                 DueDate = new DateTime(2025, 3, 31)
@@ -66,7 +66,7 @@ namespace C971
             await _connection.InsertAsync(new Models.Assessment
             {
                 CourseId = course.Id,
-                Name = "C971 Performance Assessment",
+                Name = "Mobile Dev Performance Assessment",
                 Type = "Performance",
                 StartDate = new DateTime(2025, 3, 1),
                 DueDate = new DateTime(2025, 3, 28)
@@ -159,6 +159,25 @@ namespace C971
         {
             await _initTask;
             await _connection.DeleteAsync(assessment);
+        }
+
+        public async Task<List<Models.Course>> SearchCoursesAsync(string query)
+        {
+            await _initTask;
+            var q = query.Trim().ToLower();
+            var all = await _connection.Table<Models.Course>().ToListAsync();
+            var results = new List<Models.Course>();
+            foreach (var c in all)
+            {
+                if (c.Title.ToLower().Contains(q) ||
+                    c.InstructorName.ToLower().Contains(q) ||
+                    c.Status.ToLower().Contains(q) ||
+                    c.Notes.ToLower().Contains(q))
+                {
+                    results.Add(c);
+                }
+            }
+            return results;
         }
     }
 }

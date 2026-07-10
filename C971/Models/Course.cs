@@ -1,24 +1,15 @@
-﻿using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SQLite;
 
 namespace C971.Models
 {
     [Table("Courses")]
-    public class Course
+    public class Course : ScheduledItem
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-
         public int TermId { get; set; }
 
         [NotNull]
         public string Title { get; set; } = "";
 
-        public DateTime StartDate { get; set; } = DateTime.Today;
         public DateTime EndDate { get; set; } = DateTime.Today.AddMonths(3);
 
         public string Status { get; set; } = "Plan to Take";
@@ -31,10 +22,15 @@ namespace C971.Models
 
         public static readonly string[] StatusOptions =
         {
-        "Plan to Take",
-        "In Progress",
-        "Completed",
-        "Dropped"
-    };
+            "Plan to Take",
+            "In Progress",
+            "Completed",
+            "Dropped"
+        };
+
+        public override string DisplayName => Title;
+
+        public override string GetSummary()
+            => $"{Title} ({Status}): {StartDate:MM/dd/yyyy} – {EndDate:MM/dd/yyyy}";
     }
 }

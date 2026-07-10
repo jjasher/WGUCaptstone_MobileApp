@@ -28,6 +28,13 @@
             await Shell.Current.GoToAsync($"{nameof(TermDetailPage)}?termId=0");
         }
 
+        private async void OnSearchClicked(object? sender, EventArgs e)
+        {
+            var query = SearchEntry.Text?.Trim() ?? "";
+            await Shell.Current.GoToAsync($"{nameof(SearchPage)}?query={Uri.EscapeDataString(query)}");
+            SearchEntry.Text = "";
+        }
+
         private async void OnTermTapped(object? sender, TappedEventArgs e)
         {
             if (sender is not Border border || border.BindingContext is not Models.Term term)

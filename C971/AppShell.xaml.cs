@@ -9,6 +9,7 @@
             Routing.RegisterRoute(nameof(TermDetailPage), typeof(TermDetailPage));
             Routing.RegisterRoute(nameof(CourseDetailPage), typeof(CourseDetailPage));
             Routing.RegisterRoute(nameof(AssessmentDetailPage), typeof(AssessmentDetailPage));
+            Routing.RegisterRoute(nameof(SearchPage), typeof(SearchPage));
         }
     }
 }
