@@ -23,6 +23,7 @@ namespace C971
             builder.Services.AddTransient<CourseDetailPage>();
             builder.Services.AddTransient<AssessmentDetailPage>();
             builder.Services.AddTransient<SearchPage>();
+            builder.Services.AddTransient<ReportPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();

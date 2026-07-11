@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.ReportPage"
+             Title="Course Report">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+
+            <Label Text="Course Status Report"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Label x:Name="GeneratedLabel"
+                   FontSize="12"
+                   TextColor="Gray"
+                   HorizontalOptions="Center" />
+
+            <BoxView HeightRequest="1"
+                     BackgroundColor="Gray"
+                     Margin="0,4" />
+
+            <!-- Column headers -->
+            <Grid ColumnDefinitions="*,*,Auto,Auto"
+                  ColumnSpacing="8"
+                  Padding="4,0">
+                <Label Grid.Column="0" Text="Course" FontAttributes="Bold" FontSize="13" />
+                <Label Grid.Column="1" Text="Term" FontAttributes="Bold" FontSize="13" />
+                <Label Grid.Column="2" Text="Status" FontAttributes="Bold" FontSize="13" />
+                <Label Grid.Column="3" Text="End Date" FontAttributes="Bold" FontSize="13" HorizontalOptions="End" />
+            </Grid>
+
+            <BoxView HeightRequest="1" BackgroundColor="Gray" />
+
+            <CollectionView x:Name="ReportList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,*,Auto,Auto"
+                              ColumnSpacing="8"
+                              Padding="4,6">
+                            <Label Grid.Column="0"
+                                   Text="{Binding CourseName}"
+                                   FontSize="13"
+                                   LineBreakMode="TailTruncation" />
+                            <Label Grid.Column="1"
+                                   Text="{Binding TermName}"
+                                   FontSize="13"
+                                   TextColor="Gray"
+                                   LineBreakMode="TailTruncation" />
+                            <Label Grid.Column="2"
+                                   Text="{Binding Status}"
+                                   FontSize="13" />
+                            <Label Grid.Column="3"
+                                   Text="{Binding EndDate, StringFormat='{0:MM/dd/yy}'}"
+                                   FontSize="13"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,4" />
+
+            <Label x:Name="SummaryLabel"
+                   FontSize="13"
+                   TextColor="Gray" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

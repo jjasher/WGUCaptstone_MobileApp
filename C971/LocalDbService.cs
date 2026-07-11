@@ -161,6 +161,22 @@ namespace C971
             await _connection.DeleteAsync(assessment);
         }
 
+        public async Task<List<(Models.Term Term, Models.Course Course)>> GetCourseReportAsync()
+        {
+            await _initTask;
+            var terms = await _connection.Table<Models.Term>().ToListAsync();
+            var results = new List<(Models.Term, Models.Course)>();
+            foreach (var term in terms)
+            {
+                var courses = await _connection.Table<Models.Course>()
+                    .Where(c => c.TermId == term.Id)
+                    .ToListAsync();
+                foreach (var course in courses)
+                    results.Add((term, course));
+            }
+            return results;
+        }
+
         public async Task<List<Models.Course>> SearchCoursesAsync(string query)
         {
             await _initTask;

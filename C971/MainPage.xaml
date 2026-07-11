@@ -6,6 +6,7 @@
              Title="Academic Terms">
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Report" Clicked="OnReportClicked" />
         <ToolbarItem Text="Add Term" Clicked="OnAddTermClicked" />
     </ContentPage.ToolbarItems>
 

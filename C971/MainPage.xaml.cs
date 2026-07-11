@@ -28,6 +28,11 @@
             await Shell.Current.GoToAsync($"{nameof(TermDetailPage)}?termId=0");
         }
 
+        private async void OnReportClicked(object? sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(ReportPage));
+        }
+
         private async void OnSearchClicked(object? sender, EventArgs e)
         {
             var query = SearchEntry.Text?.Trim() ?? "";
