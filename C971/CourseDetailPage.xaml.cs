@@ -59,9 +59,14 @@ namespace C971
             EndDatePicker.Date = _course.EndDate;
             StatusPicker.SelectedItem = _course.Status;
             InstructorNameEntry.Text = _course.InstructorName;
-            InstructorPhoneEntry.Text = _course.InstructorPhone;
-            InstructorEmailEntry.Text = _course.InstructorEmail;
             NotesEditor.Text = _course.Notes;
+
+            if (_course.Id != 0)
+            {
+                var (phone, email) = await _db.GetInstructorContactAsync(_course.Id);
+                InstructorPhoneEntry.Text = phone;
+                InstructorEmailEntry.Text = email;
+            }
         }
 
         private async Task LoadAssessmentsAsync()
@@ -121,13 +126,15 @@ namespace C971
             _course.EndDate = EndDatePicker.Date;
             _course.Status = StatusPicker.SelectedItem?.ToString() ?? "Plan to Take";
             _course.InstructorName = InstructorNameEntry.Text.Trim();
-            _course.InstructorPhone = InstructorPhoneEntry.Text.Trim();
-            _course.InstructorEmail = InstructorEmailEntry.Text.Trim();
             _course.Notes = NotesEditor.Text?.Trim() ?? "";
 
             await _db.SaveCourseAsync(_course);
-            await LoadAssessmentsAsync();
+            await _db.SaveInstructorContactAsync(
+                _course.Id,
+                InstructorPhoneEntry.Text.Trim(),
+                InstructorEmailEntry.Text.Trim());
 
+            await LoadAssessmentsAsync();
             await DisplayAlert("Saved", "Course saved.", "OK");
         }
 

@@ -15,8 +15,6 @@ namespace C971.Models
         public string Status { get; set; } = "Plan to Take";
 
         public string InstructorName { get; set; } = "";
-        public string InstructorPhone { get; set; } = "";
-        public string InstructorEmail { get; set; } = "";
 
         public string Notes { get; set; } = "";
 

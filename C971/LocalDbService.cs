@@ -48,11 +48,11 @@ namespace C971
                 EndDate = new DateTime(2025, 3, 31),
                 Status = "In Progress",
                 InstructorName = "Anika Patel",
-                InstructorPhone = "555-123-4567",
-                InstructorEmail = "anika.patel@strimeuniversity.edu",
                 Notes = "Sample course notes."
             };
             await _connection.InsertAsync(course);
+
+            await SaveInstructorContactAsync(course.Id, "555-123-4567", "anika.patel@strimeuniversity.edu");
 
             await _connection.InsertAsync(new Models.Assessment
             {
@@ -71,6 +71,25 @@ namespace C971
                 StartDate = new DateTime(2025, 3, 1),
                 DueDate = new DateTime(2025, 3, 28)
             });
+        }
+
+        public async Task SaveInstructorContactAsync(int courseId, string phone, string email)
+        {
+            await SecureStorage.Default.SetAsync($"course_{courseId}_phone", phone);
+            await SecureStorage.Default.SetAsync($"course_{courseId}_email", email);
+        }
+
+        public async Task<(string Phone, string Email)> GetInstructorContactAsync(int courseId)
+        {
+            var phone = await SecureStorage.Default.GetAsync($"course_{courseId}_phone") ?? "";
+            var email = await SecureStorage.Default.GetAsync($"course_{courseId}_email") ?? "";
+            return (phone, email);
+        }
+
+        public void RemoveInstructorContact(int courseId)
+        {
+            SecureStorage.Default.Remove($"course_{courseId}_phone");
+            SecureStorage.Default.Remove($"course_{courseId}_email");
         }
 
         public async Task<List<Models.Term>> GetTermsAsync()
@@ -130,6 +149,7 @@ namespace C971
             var assessments = await GetAssessmentsForCourseAsync(course.Id);
             foreach (var a in assessments)
                 await _connection.DeleteAsync(a);
+            RemoveInstructorContact(course.Id);
             await _connection.DeleteAsync(course);
         }
 
