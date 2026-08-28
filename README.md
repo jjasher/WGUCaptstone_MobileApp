@@ -1,6 +1,6 @@
 # C971 Mobile Application Development Using C Sharp
 
-
+The following project was utilized for my capstone project at WGU. The bellow information was included with the initial branch of the project:
 
 ## Getting started
 
