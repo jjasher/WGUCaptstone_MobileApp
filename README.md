@@ -23,7 +23,7 @@ A mobile application built with C# and .NET MAUI. This is a mobile scheduling ap
 
 **Download**
 
-[Download landing page](https://jjasher.github.io/MobileApp)
+[Download landing page](https://jjasher.github.io/WGUCaptstone_MobileApp/)
 
 **Installing via ADB (for developers)**
 
